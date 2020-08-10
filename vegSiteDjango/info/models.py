@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 
 class Restaurants(models.Model):
@@ -8,8 +7,8 @@ class Restaurants(models.Model):
     dirName = models.CharField(max_length=100,unique=True)
     address = models.CharField(max_length=1000,unique=True)
     mapUrl = models.CharField(max_length=10000,unique=True)
-    imgUrl = ArrayField(models.CharField(max_length=50, blank=True))
-    
+    imgUrl = ["//assets/images/tbd.png","//assets/images/tbd.png"]
+    testName = "TEST"
     
     
     

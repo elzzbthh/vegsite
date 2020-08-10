@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -18,11 +18,11 @@ https://templatemo.com/tm-548-training-studio
 
 -->
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
 
-    <link rel="stylesheet" href="assets/css/templatemo-training-studio.css">
+    <link rel="stylesheet" href="{% static 'css/restaurant.css' %}">
 
     </head>
     
@@ -50,7 +50,8 @@ https://templatemo.com/tm-548-training-studio
                     <nav class="main-nav">
                         <div id="header">
                             <!-- ***** Logo Start ***** -->
-                            <a href="../../index.html" class="logo" id="headerLogoImg"><img id="headerLogoImg" src="assets/images/logo.png"></a>
+                            <a href="/" class="logo" id="headerLogoImg"><img id="headerLogoImg" src="{% static 'images/logo.png' %}"></a>
+                            
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             
@@ -70,7 +71,8 @@ https://templatemo.com/tm-548-training-studio
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Restaurant Title</h2>
-                        <img src="assets/images/line-dec.png" alt="waves">
+                        <img src="{% static 'images/line-dec.png' %}" alt="waves">
+                        
                         <p>Menu Template</p>
                     </div>
                 </div>
@@ -78,14 +80,15 @@ https://templatemo.com/tm-548-training-studio
             <!-- Slideshow container -->
             <div class="slideshow-container">
                   <!-- Full-width images with number and caption text -->
-                  {% i = 0 %}
-                  {% for img in restaurants.imgUrl %}
-                  {% i++ %}
+                  {% for rest in restaurants %}
                   <div class="mySlides">
-                    <div class="numbertext">i / 3</div>
-                    <img src= {{img}} style="width:100% height:50%">
+                    <div class="numbertext">{{rest.id}} / 3</div>
+                    <img src="" style="width:100% height:50%">
                     <div class="text">Caption Text</div>
                   </div>
+                  
+
+                  <p> {{ rest.testName}} </p>
                   {% endfor %}
 
                   <!-- Next and previous buttons -->
@@ -111,7 +114,7 @@ https://templatemo.com/tm-548-training-studio
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>地點資訊</h2>
-                        <img src="assets/images/line-dec.png" alt="waves">
+                        <img src="{% static 'images/line-dec.png' %}" alt="waves">
                         <p>地址</p>
                         <br>
                         <a><p>Google Map連結</p></a>
@@ -154,23 +157,26 @@ https://templatemo.com/tm-548-training-studio
     </footer>
 
     <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+    
 
     <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/mixitup.js"></script> 
-    <script src="assets/js/accordions.js"></script>
-    <script src="assets/js/slideShow"></script>
+
+    <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imgfix.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.js' %}"></script>
+    <script src="{% static 'js/accordions.js' %}"></script>
+    <script src="{% static 'js/slideShow' %}"></script>
     
     <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
 
   </body>
 </html>
